@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-chat',
-  standalone: false,
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']  // corrected property name from styleUrl to styleUrls
+  styleUrls: ['./chat.component.css'],
+  standalone: false
 })
 export class ChatComponent {
   clients: string[] = [];
@@ -14,5 +14,9 @@ export class ChatComponent {
     this.clientCount++;
     const newClientId = 'Client' + this.clientCount;
     this.clients.push(newClientId);
+  }
+
+  removeClient(clientId: string): void {
+    this.clients = this.clients.filter(client => client !== clientId);
   }
 }
