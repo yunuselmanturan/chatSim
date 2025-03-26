@@ -3,7 +3,8 @@
 
   <div class="message-input">
     <input type="text" [(ngModel)]="newMessage" placeholder="Type your message" />
-    <button (click)="sendMessage()">Send</button><button (click)="ngOnDestroy()">unsubscribe</button>
+    <button (click)="sendMessage()">Send</button>
+    <button (click)="unsubscribe()">Unsubscribe</button>
   </div>
 
   <div class="messages-section">
