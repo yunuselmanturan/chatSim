@@ -1,10 +1,10 @@
 <div class="chatContainer">
-  <button (click)="joinClient()">join new chat</button>
+  <button (click)="joinClient()">Join New Chat</button>
 </div>
 
-@for (client of clients; track $index) {
+<div *ngFor="let client of clients">
   <hr>
   <div class="client">
-    <app-client></app-client>
+    <app-client [clientId]="client" (unsubscribed)="removeClient($event)"></app-client>
   </div>
-}
+</div>
