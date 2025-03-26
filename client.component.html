@@ -1,0 +1,26 @@
+<div class="client">
+  <h3>{{ clientId }}</h3>
+
+  <div class="message-input">
+    <input type="text" [(ngModel)]="newMessage" placeholder="Type your message" />
+    <button (click)="sendMessage()">Send</button><button (click)="ngOnDestroy()">unsubscribe</button>
+  </div>
+
+  <div class="messages-section">
+    <h4>Sent Messages</h4>
+    <ul>
+      <li *ngFor="let msg of sentMessages">
+        <strong>{{ msg.clientId }}:</strong> {{ msg.message }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="messages-section">
+    <h4>Received Messages</h4>
+    <ul>
+      <li *ngFor="let msg of receivedMessages">
+        <strong>{{ msg.clientId }}:</strong> {{ msg.message }}
+      </li>
+    </ul>
+  </div>
+</div>

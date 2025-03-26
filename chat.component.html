@@ -1,0 +1,10 @@
+<div class="chatContainer">
+  <button (click)="joinClient()">join new chat</button>
+</div>
+
+@for (client of clients; track $index) {
+  <hr>
+  <div class="client">
+    <app-client></app-client>
+  </div>
+}
